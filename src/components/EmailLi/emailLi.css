@@ -1,0 +1,70 @@
+.EmailLi {
+    width: 370px;
+    height: 65px;
+    box-shadow: 0 0 4px 0 #333333;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #fff;
+    user-select: none;
+}
+
+.EmailLi img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.EmailLi .info {
+
+    width: 80%;
+    height: 90%;
+    padding: 0 15px;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.EmailLi h4 {
+    display: flex;
+    padding: 2px;
+    font-size: 15px;
+}
+
+.EmailLi .info .textMessageInfo {
+    font-size: 12px;
+    padding: 2px;
+    color: #8191A9;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.EmailLi .timeAndBadeg {
+    width: 50px;
+    height: 80%;
+    padding: 0 5px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.EmailLi .time {
+    font-size: 12px;
+    color: #717D9D;
+}
+
+.EmailLi .badge {
+    font-size: 12px;
+    background-color: var(--green);
+    width: 25px;
+    height: 25px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}

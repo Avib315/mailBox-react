@@ -1,0 +1,25 @@
+.EailType{
+    color: #333333;
+    width: 280px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow:  0 0 4px 0 #333;
+    padding: 0 10px;
+    justify-content: space-between;
+    color: var( --green);
+}
+.EailType span{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-transform: capitalize;
+}
+.EailType span :nth-child(1){
+    font-size: 21px;
+}
+.EailType.notActive{
+    color: #333333;
+}

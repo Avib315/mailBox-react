@@ -1,0 +1,19 @@
+.EmailTitle{
+    width: 649px;
+    height: 147px;
+    padding: 15px;
+}
+.EmailTitle hr{
+    opacity: .8;
+    background-color:#DEE1E6;
+    margin-block:0 ;
+}
+.EmailTitle p{
+    padding:5px 0;
+    font-size: 12px;
+    color:#A2AAB4;
+}
+.EmailTitle h3{
+    padding:10px 0;
+    font-size: 28px;
+}
