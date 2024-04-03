@@ -2,8 +2,7 @@
 
 .LabelBadge {
     width: 128px;
-    background-color: #FD5E5E;
-    height: 42px;
+    height: 36px;
     position: relative;
     border-radius: 9px;
     display: flex;
@@ -16,8 +15,8 @@
     display: block;
     position: absolute;
     right: -10px;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 7px;
     background-color: inherit;
     transform: rotate(45deg);

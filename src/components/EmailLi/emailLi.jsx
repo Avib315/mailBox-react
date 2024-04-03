@@ -1,21 +1,26 @@
 import React from 'react'
 import "./emailLi.css"
 import { Badge } from '../Badge/badge'
-export const EmailLi = ({}) => {
+import { FaStar } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
+export const EmailLi = ({userName = "" , to="" ,userImage = "" , timeMsg = "", userMsg = ""}  ) => {
   return (
-    <div className='EmailLi'>
-        <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" alt="" />
+    // <div className='EmailLi'>
+      <NavLink to={to} className={({isActive})=>isActive ? "EmailLi activeLink":"EmailLi"}>
+
+        <img src={userImage} alt="" />
         <div className="info">
-        <h4>Jessica Koel</h4>
+        <h4>{userName}</h4>
         <p className='textMessageInfo'>
-          Hello How Are U?  dont Forget to Fuck off
+          {userMsg}
         </p>
         </div>
    
         <div className="timeAndBadeg">
-          <p className='time'>12:43</p>
-          <Badge>2</Badge>
+          <p className='time'>{timeMsg}</p>
+         <button className='star'><FaStar/></button>
         </div>
-        </div>
+      </NavLink>
+        // </div>
   )
 }

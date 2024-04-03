@@ -1,0 +1,44 @@
+.EmailNav {
+    padding: 15px;
+    border-radius: 20px;
+    border-left: 1px solid #c7c7c7;
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+}
+.EmailNav .titleAndBackBtn {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--hr);
+    padding-bottom: 16px;
+}
+
+.EmailNav .titleAndBackBtn h2 {
+    font-size: 20px;
+    padding: 8px 12px;
+}
+
+.EmailNav .titleAndBackBtn a {
+    border-radius: 10px;
+    font-size: 14px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #949494;
+    background-color: #e2e1e1;
+}
+
+.EmailNav .navEamilTypeAndAddMsgBtn {
+    padding: 26px 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.EmailNav .navEmaileType {
+    padding: 28px 5px 5px 0px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}

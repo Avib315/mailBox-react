@@ -1,14 +1,11 @@
 import { React } from 'react'
 import './App.css'
-import { EmailLi } from './components/EmailLi/emailLi'
-import { LabelBadge } from './components/LabelBadge/labelBadge'
-import { InputSearch } from './components/InputSearch/inputSearch'
-import { Badge } from './components/Badge/badge'
-import { NewMsgBtn } from './components/NewMsgBtn/newMsgBtn'
-import { EmailType } from './components/EmailType/emailType'
-import { navArr } from './lib/iconsArr.js'
-import { EmailTitle } from './components/EmailTitle/emailTitle.jsx'
-import { SendBtn } from './components/SendBtn/sendBtn.jsx'
+
+import { Routes, Route } from 'react-router-dom'
+import { MainLayout } from './layout/MainLayout/mainLayout.jsx'
+import { EmialLayout } from './layout/EmailLayout/emailLayout.jsx'
+import { EmialListLayout } from './layout/EmailListLayout/emailListLayout.jsx'
+import { CheatsLayout } from './layout/CheatsLayout/cheatsLayout.jsx'
 
 
 const App = () => {
@@ -17,15 +14,16 @@ const App = () => {
   return (
     <>
       <div className="App">
-        {/* <EmailLi /> */}
-        {/* <InputSearch /> */}
-        {/* <LabelBadge bgColor='#ffd700' />  */}
-        {/* <Badge>2</Badge> */}
-        {/* {navArr.map((nav => <EmailType name={nav.name} to={nav.to} IconType={nav.icon} />))} */}
-        {/* <EmailTitle/> */}
-        {/* <NewMsgBtn/> */}
-        {/* <SendBtn/> */}
-
+        <Routes>
+          <Route path='/' element={<MainLayout />}>
+            <Route path='/emails' element={<EmialLayout/>}> 
+            <Route path=':emailType' element={<EmialListLayout/>} >
+            <Route path=':userId' element={<CheatsLayout/>} >
+            </Route>
+            </Route>
+            </Route>
+          </Route>
+        </Routes>
       </div>
     </>
   )

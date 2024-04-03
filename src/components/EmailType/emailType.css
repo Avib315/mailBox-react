@@ -1,25 +1,31 @@
-.EailType{
-    color: #333333;
-    width: 280px;
-    height: 60px;
+.EmailType {
+    width: 100%;
     display: flex;
     align-items: center;
-    box-shadow:  0 0 4px 0 #333;
-    padding: 0 10px;
+    padding: 6px;
     justify-content: space-between;
-    color: var( --green);
+    color: #333333;
 }
-.EailType span{
+
+.EmailType.activeEmail {
+    color: var(--green);
+}
+
+.EmailType span {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 28px;
     text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
 }
-.EailType span :nth-child(1){
-    font-size: 21px;
+
+.EmailType span :nth-child(1) {
+    font-size: 18px;
+    color: var(--grey-icons);
 }
-.EailType.notActive{
-    color: #333333;
+.EmailType.activeEmail span :nth-child(1) {
+    color: var(--green);
 }

@@ -1,8 +1,8 @@
 .InputSearch{
-    width: 345px;
-    height: 47px;
-    font-size: 16px;
-    padding:5px 10px ;
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+    padding:2px ;
     border-radius: 10px;
     background-color: #e4e8ee;
     position: relative;
@@ -10,7 +10,8 @@
     align-items: center;
 }
 .InputSearch .Input{
-    font-size: 18px;
+    font-size: 16px;
+    border-radius: inherit;
     width: 90%;
     height: 100%;
     background-color: inherit;
@@ -19,7 +20,7 @@
     padding-inline: 2px;
 }
 .InputSearch .Input::placeholder{
-    font-weight: 600;
+    font-size: 14px;
     color: #8d8e8f;
     text-transform: capitalize;
     opacity: .75;
@@ -31,7 +32,7 @@
     box-shadow: 0 0 2px -1px #212121;
 }
 .iconSearch{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 900;
     color: #8d8e8f;
     opacity: .7;

@@ -2,6 +2,6 @@ import React from 'react'
 import "./templet1.css"
 export const Templet = () => {
   return (
-    <div className='templet1'>templet1</div>
+    <div className='Templet'>templet1</div>
   )
 }
