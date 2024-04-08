@@ -9,13 +9,15 @@ import { CheatsLayout } from './layout/CheatsLayout/cheatsLayout.jsx'
 import { LoginPage } from './pages/LoginPage/loginPage.jsx'
 import { RegisterPage } from './pages/RegisterPage/registerPage.jsx'
 import { NewMsgPage } from './pages/NewMsgPage/newMsgPage.jsx'
+import { NavigatorPage } from './components/NavigatorPage.jsx'
 
 
 const App = () => {
- 
+
   return (
     <>
       <div className="App">
+        <NavigatorPage />
         <Routes>
           <Route path='/login' element={<LoginPage />}></Route>
           <Route path='/register' element={<RegisterPage />}></Route>
@@ -29,11 +31,11 @@ const App = () => {
                 </Route>
               </Route>
             </Route>
-          <Route path='/compas' element={<>compas</>}></Route>
-          <Route path='/view' element={<>view</>}></Route>
-          <Route path='/checked' element={<>checked</>}></Route>
-          <Route path='/stats' element={<>stats</>}></Route>
-          <Route path='/video' element={<>video</>}></Route>
+            <Route path='/compas' element={<>compas</>}></Route>
+            <Route path='/view' element={<>view</>}></Route>
+            <Route path='/checked' element={<>checked</>}></Route>
+            <Route path='/stats' element={<>stats</>}></Route>
+            <Route path='/video' element={<>video</>}></Route>
           </Route>
         </Routes>
       </div>

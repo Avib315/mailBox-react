@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import "./mainNav.css"
 import { userNavArr } from "../../dataContext/userNav";
 import { NavLink } from 'react-router-dom';
-import { testConnection } from '../../functions/webApi'
 export const MainNav = () => {
     return (
         <div className='MainNav'>

@@ -11,12 +11,12 @@ export const navArr = [
     },
     {
         name:"Send Emails",
-        to:"send",
+        to:"sent",
         icon:IoIosSend
     },
     {
         name:"Favorite",
-        to:"star",
+        to:"favorite",
         icon:FaStar
     },
     {
@@ -26,7 +26,7 @@ export const navArr = [
     },
     {
         name:"Deleted",
-        to:"trash",
+        to:"deleted",
         icon:IoTrashBin
     },
 

@@ -8,8 +8,8 @@ export const LoginPage = () => {
   return (
     <FormSignContainer title="Welcome To Mail Box">
       <form className='LogInPage'>
-        <InputUser labelName="Email" />
-        <InputUser labelName="password" type='password' />
+        <InputUser labelName="Email" name="email" onChange={(e)=>console.log("changed")}/>
+        <InputUser labelName="password" name="password" type='password' />
         <InputSubmit value='Log In' />
       </form>
       <p className='pTag'> dont have an account? <NavLink to="/register">register Here</NavLink></p>

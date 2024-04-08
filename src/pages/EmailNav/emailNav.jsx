@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./emailNav.css"
 import { navArr } from '../../dataContext/chatsNav'
 import { EmailType } from '../../components/EmailType/emailType'
 import { NavLink } from 'react-router-dom'
 import { IoIosArrowBack } from "react-icons/io";
 import { NewMsgBtn } from '../../components/NewMsgBtn/newMsgBtn'
-export const EmailNav = () => {
 
+export const EmailNav = () => {
   return (
     <div className='EmailNav'>
       <div className='titleAndBackBtn'>
