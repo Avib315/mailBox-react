@@ -1,11 +1,12 @@
 import React from 'react'
 import "./emailNav.css"
 import { navArr } from '../../dataContext/chatsNav'
-import { EmailType } from '../EmailType/emailType'
+import { EmailType } from '../../components/EmailType/emailType'
 import { NavLink } from 'react-router-dom'
 import { IoIosArrowBack } from "react-icons/io";
-import { NewMsgBtn } from '../NewMsgBtn/newMsgBtn'
+import { NewMsgBtn } from '../../components/NewMsgBtn/newMsgBtn'
 export const EmailNav = () => {
+
   return (
     <div className='EmailNav'>
       <div className='titleAndBackBtn'>
@@ -17,7 +18,7 @@ export const EmailNav = () => {
         <div className='navEamilTypeAndAddMsgBtn'> 
         <NewMsgBtn/>
         <div className='navEmaileType'> 
-          {navArr.map(e => <EmailType IconType={e.icon} name={e.name} to={e.to} />)}
+          {navArr.map(e => <EmailType key={"emailNav-"+e.name}IconType={e.icon} name={e.name} to={e.to} />)}
         </div>
         </div>
     </div>

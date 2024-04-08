@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .EmailNav .titleAndBackBtn {
     display: flex;
     align-items: center;

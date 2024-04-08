@@ -13,12 +13,13 @@
 
 .EmailType span {
     text-align: center;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 28px;
+    gap: 10%;
     text-transform: capitalize;
     font-size: 14px;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
     font-weight: 600;
 }
 

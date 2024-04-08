@@ -5,3 +5,4 @@ export const Templet = () => {
     <div className='Templet'>templet1</div>
   )
 }
+  

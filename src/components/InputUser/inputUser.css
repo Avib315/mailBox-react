@@ -1,0 +1,30 @@
+.InputUser{
+    /* padding: 6px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    width: 100%;
+}
+.InputUser span{
+font-size: 14px;
+font-weight: 600;
+color: #333333;
+padding: 6px 2px;
+text-transform: capitalize;
+}
+.InputUser input{
+    width: 100%;
+    padding:8px 4px ;
+    border: 1px solid var(--hr);
+   background-color: aliceblue; 
+   border-radius: 6px;
+}
+.InputUser input:focus{
+    outline: 2px solid var(--green);
+}
+.InputUser input:placeholder-shown{
+    background-color: #fff;
+}
+.InputUser input::placeholder{
+   visibility: hidden;
+}
