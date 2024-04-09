@@ -102,9 +102,9 @@
     padding: 5% 0;
 }
 
-.lableSizeHolder {
+.EmailNav .lableContainer .lableSizeHolder {
     position: relative;
-    width: 100px;
+    width: 46px;
     height: 30px;
     display: flex;
     align-items: center;

@@ -12,6 +12,10 @@
     padding: 12px 0px;
     align-items: center;
 }
+.Cheats .lableContainer {
+    width: 110px;
+
+}
 
 .Cheats .headersButtons {
     background-color: inherit;

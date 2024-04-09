@@ -14,7 +14,9 @@ export const Cheats = () => {
   return (
     <div className='Cheats'>
       <div className="headerContainer">
+        <div className="lableContainer">
         <LabelBadge bgColor="#f2dea8" />
+        </div>
         <div className="buttonsContainer">
           <button className="headersButtons"><FaStar /></button>
           <button className="headersButtons"><IoTrashBin /></button>

@@ -5,7 +5,6 @@ export const LabelBadge = ({ title = "", bgColor = "#FD5E5E" }) => {
     <>
       <div className='LabelBadge' style={{ backgroundColor: bgColor }}>
         {title}</div>
-      <div className='sqLable' style={{ backgroundColor: bgColor }}></div>
     </>
   )
 }

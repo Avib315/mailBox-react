@@ -24,7 +24,7 @@ export const EmailList = () => {
           <InputSearch />
         </div>
         <div className="emailListContainer">
-          {!isLoading && arrChatUser?.chats?.length == 0 && < h2 > No Chats</h2>}
+          {!isLoading && arrChatUser?.chats?.length == 0 && < h2 > No Chats , You Lonely Fuck</h2>}
           {arrChatUser ? arrChatUser.chats.map((e, i) => {
             const lastmsg = e.chat.msg.find(msg => msg.date === e.chat.lastDate)
             return <EmailLi

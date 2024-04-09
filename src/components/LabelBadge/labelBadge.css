@@ -1,7 +1,8 @@
 
 
 .LabelBadge {
-    min-width: 78px;
+    min-width: 35px;
+    width: 100%;
     height: 26px;
     position: relative;
     border-radius: 6px;
@@ -15,7 +16,7 @@
     content: "";
     display: block;
     position: absolute;
-    right: -6%;
+    right: -7px;
     width: 21px;
     height: 21px;
     border-radius: 6px 4px 6px 6px ;
