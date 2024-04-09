@@ -19,7 +19,7 @@ export const NavigatorPage = () => {
     ]
   return (
     <>
-    <div className={`Navigator ${openNav ? "open" : ""}`} onClick={()=>setOpenNav(!openNav)}> {navArr.map(e=><NavLink to={e.to}>{e.name}</NavLink>)} </div>
+    <div className={`Navigator ${openNav ? "open" : ""}`} onClick={()=>setOpenNav(!openNav)}> {navArr.map(e=><NavLink key={"navsds" + e.to} to={e.to}>{e.name}</NavLink>)} </div>
     </>
   )
 }

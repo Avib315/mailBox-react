@@ -9,7 +9,7 @@
     width: 24%;
 }
 
-.EmailList .container{
+.EmailList .container {
     background-color: #eaeaea;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,7 @@
     height: 100%;
     padding: 10px 0px;
 }
+
 .EmailList .inputSerachContainer {
     padding: 0px 30px 18px;
     width: 100%;
@@ -33,4 +34,9 @@
     border-top: 1px solid var(--hr);
     padding: 12px;
     overflow-y: auto;
+}
+
+.EmailList .emailListContainer h2 {
+    text-align: center;
+    padding-top: 15%;
 }

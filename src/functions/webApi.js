@@ -14,7 +14,6 @@ const testConnection = async () => {
 }
 const getEmails = async (emailType) => {
     const flags = [Flags[emailType]]
-    console.log(1111,flags);
     const data = await axios.post(URL + "/userchats/getchats", {flags})
 
     return data.data
