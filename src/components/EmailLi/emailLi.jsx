@@ -4,14 +4,15 @@ import { Badge } from '../Badge/badge'
 import { FaStar } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 import playOnClickEffect from '../../functions/soundClickEffect';
-export const EmailLi = ({ userName = "", to = "", userImage = "", timeMsg = "", userMsg = "" }) => {
-
+export const EmailLi = ({ userName = "", to = "", timeMsg = "", userMsg = "", members = [] }) => {
   return (
-    <NavLink onClick={()=>playOnClickEffect()} to={to} className={({ isActive }) => isActive ? "EmailLi activeLink" : "EmailLi"}>
+    <NavLink onClick={() => playOnClickEffect()} to={to} className={({ isActive }) => isActive ? "EmailLi activeLink" : "EmailLi"}>
 
-      <img src={userImage} alt="" />
+      <div className="usersImageContainer">
+        {members.slice(0, 3).map((mem) => <img src={mem.avatar} alt="userMember" />)}
+      </div>
       <div className="info">
-        <h4>{userName}</h4>
+        <h4>{members[0].fullName} {members.length > 1 && ", +" + (members.length - 1)}</h4>
         <p className='textMessageInfo'>
           {userMsg}
         </p>

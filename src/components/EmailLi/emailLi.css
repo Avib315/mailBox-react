@@ -22,8 +22,39 @@
     background-color: #ffffff;
     box-shadow: 0 0 1px -1px #333333;
 }
+.EmailLi .usersImageContainer{
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+.EmailLi .usersImageContainer :nth-child(1){
+    z-index: 3;
+    width: 34px;
+    height: 34px;
+    right: 0px;
+}
+.EmailLi .usersImageContainer :nth-child(2){
+    right: -4px;
+    width: 32px;
+    height: 32px;
+    opacity: .8;
+    z-index: 2;
 
+}
+.EmailLi .usersImageContainer :nth-child(3){
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    opacity: .6;
+    z-index: 1;
+}
 .EmailLi img {
+    background-color: #65c9ff;
+    border: 1px solid #ffffff;
+    position: absolute;
     width: 34px;
     height: 34px;
     border-radius: 50%;

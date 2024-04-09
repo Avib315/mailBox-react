@@ -4,7 +4,7 @@ import { FormSignContainer } from '../../components/FormSignContainer/formSignCo
 import { InputUser } from '../../components/InputUser/inputUser'
 import { InputSubmit } from '../../components/InputSubmit/inputSubmit'
 import { NavLink } from 'react-router-dom'
-import { axiosReq, useAxiosReq } from '../../functions/webApi'
+import { axiosReq } from '../../functions/webApi'
 export const RegisterPage = () => {
   const [userInput, setUserInput] = useState({
     firstName: "",
@@ -28,7 +28,6 @@ export const RegisterPage = () => {
       avatar:userInput.avatar
     }
     const data = await axiosReq({body:userObj , url:"user/register" , method:"POST"})
-    console.log(data)
   }
 
   

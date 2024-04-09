@@ -5,7 +5,6 @@ const useAxiosReq = ({ deafultValue, method, url, body, dependency = [] }) => {
     const [data, setData] = useState(deafultValue);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-    console.log(deafultValue, method, url, body, dependency)
     const fatchData = async () => {
         setLoading(true);
         try {

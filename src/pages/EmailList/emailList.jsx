@@ -8,9 +8,10 @@ import { flags, useAxiosReq, axiosReq } from '../../functions/webApi';
 import { formatTime } from "../../functions/timeFormat"
 export const EmailList = () => {
   const { emailType } = useParams()
-  const axiosPostQuery = { method: "POST", deafultValue: {}, url: "userchats/getchats", body: { flags: [flags[emailType]] }, dependency: [emailType] }
+  const axiosPostQuery = { method: "POST", deafultValue: [], url: "userchats/getchats", body: { flags: [flags[emailType]] }, dependency: [emailType] }
   const { loading, data, setData } = useAxiosReq(axiosPostQuery)
   const searchByInput = (e) => {
+    return
     setTimeout(async () => {
       try {
         const filterData = await axiosReq({ ...axiosPostQuery, body: { flags: [flags[emailType]], input: e.target.value } })
@@ -18,10 +19,8 @@ export const EmailList = () => {
       } catch (error) {
         console.error(error)
       }
-
     }, 1000)
   }
-  console.log(data);
   return (
     <div className='EmailList'>
       <div className="container">
@@ -31,15 +30,17 @@ export const EmailList = () => {
         </div>
         <div className="emailListContainer">
           {(!loading && data?.length == 0) && < h2 > No Chats , You Lonely Fuck</h2>}
-          {data&&Array.isArray(data)&&data.map((e, i) => {
+          {data.map((e, i) => {
+            console.log(e);
             const lastmsg = e.chat.msg.find(msg => msg.date === e.chat.lastDate)
             return <EmailLi
               to={e._id}
               key={"emailList-" + i}
+              members={e.chat.members}
               userName={e.chat.members[e.chat.members.length - 1].fullName}
               userMsg={lastmsg.content}
               timeMsg={formatTime(lastmsg.date)}
-              userImage={e.chat.members[e.chat.members.length - 1].avatar} />
+              userImage={e.chat.members[e.chat.members.langht - 1]} />
           })}
           {loading && <Loading />}
         </div>
