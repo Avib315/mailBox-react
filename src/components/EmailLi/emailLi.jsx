@@ -3,11 +3,11 @@ import "./emailLi.css"
 import { Badge } from '../Badge/badge'
 import { FaStar } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import playOnClickEffect from '../../functions/soundClickEffect';
 export const EmailLi = ({ userName = "", to = "", userImage = "", timeMsg = "", userMsg = "" }) => {
 
   return (
-    // <div className='EmailLi'>
-    <NavLink to={to} className={({ isActive }) => isActive ? "EmailLi activeLink" : "EmailLi"}>
+    <NavLink onClick={()=>playOnClickEffect()} to={to} className={({ isActive }) => isActive ? "EmailLi activeLink" : "EmailLi"}>
 
       <img src={userImage} alt="" />
       <div className="info">
@@ -22,6 +22,5 @@ export const EmailLi = ({ userName = "", to = "", userImage = "", timeMsg = "", 
         <button className='star'><FaStar /></button>
       </div>
     </NavLink>
-    // </div>
   )
 }

@@ -7,18 +7,19 @@ import { IoIosArrowBack } from "react-icons/io";
 import { NewMsgBtn } from '../../components/NewMsgBtn/newMsgBtn'
 import { HiDotsVertical } from 'react-icons/hi'
 import { LabelBadge } from '../../components/LabelBadge/labelBadge'
+import playOnClickEffect from '../../functions/soundClickEffect'
 
 export const EmailNav = () => {
   return (
     <div className='EmailNav'>
       <div className='titleAndBackBtn'>
-        <NavLink to="/">
+        <NavLink onClick={playOnClickEffect}  to="/">
           <IoIosArrowBack />
         </NavLink>
         <h2>Mail Box</h2>
       </div>
       <div className='navEamilTypeAndAddMsgBtn'>
-        <NewMsgBtn />
+        <NewMsgBtn/>
         <div className='navEmaileType'>
           {navArr.map(e => <EmailType key={"emailNav-" + e.name} IconType={e.icon} name={e.name} to={e.to} />)}
         </div>
