@@ -4,6 +4,7 @@ import { FormSignContainer } from '../../components/FormSignContainer/formSignCo
 import { InputUser } from '../../components/InputUser/inputUser'
 import { InputSubmit } from '../../components/InputSubmit/inputSubmit'
 import { NavLink } from 'react-router-dom'
+import { axiosReq, useAxiosReq } from '../../functions/webApi'
 export const RegisterPage = () => {
   const [userInput, setUserInput] = useState({
     firstName: "",
@@ -11,21 +12,26 @@ export const RegisterPage = () => {
     lastName: "",
     password: "",
     email: "",
-    avatar: ""
+    avatar: "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Sunglasses&hairColor=Auburn&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Side&eyebrowType=RaisedExcitedNatural&mouthType=Smile&skinColor=Yellow"
   })
   const onChangHendler = (e) => {
     setUserInput((perv) => {
       return { ...perv, [e.target.name]: e.target.value }
     })
   }
-  const onSubmitHendler = (e) => {
+  const onSubmitHendler = async (e) => {
     e.preventDefault()
     const userObj = {
       fullName: userInput.firstName.trim() + " " + userInput.lastName.trim(),
       email: userInput.email.trim(),
       password: userInput.password,
+      avatar:userInput.avatar
     }
+    const data = await axiosReq({body:userObj , url:"user/register" , method:"POST"})
+    console.log(data)
   }
+
+  
   return (
     <FormSignContainer title="Your First Mail Box Is Here">
       <form className='RegisterPage' onSubmit={onSubmitHendler}>

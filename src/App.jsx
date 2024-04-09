@@ -27,7 +27,7 @@ const App = () => {
               </Route>
               <Route path=':emailType' element={<EmialListLayout />} >
 
-                <Route path=':userId' element={<CheatsLayout />} >
+                <Route path=':emailId' element={<CheatsLayout />} >
                 </Route>
               </Route>
             </Route>

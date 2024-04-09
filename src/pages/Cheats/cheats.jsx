@@ -10,7 +10,11 @@ import { IoTrashBin } from "react-icons/io5";
 import { FiPrinter } from "react-icons/fi";
 import { HiDotsVertical } from "react-icons/hi";
 import { SendBtn } from '../../components/SendBtn/sendBtn';
+import { useParams } from 'react-router-dom';
 export const Cheats = () => {
+  const { emailId } = useParams()
+  
+
   return (
     <div className='Cheats'>
       <div className="headerContainer">
