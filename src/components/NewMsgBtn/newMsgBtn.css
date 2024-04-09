@@ -7,8 +7,9 @@
     display: flex;
     text-align: center;
     align-items: center;
+    justify-content: center;
     gap: 5%;   
-    padding: 0 15px;
+    padding: 0 5px;
 }
 .NewMsgBtn .mailIcon{
     font-size: 22px;

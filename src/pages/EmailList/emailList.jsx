@@ -11,10 +11,11 @@ export const EmailList = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [arrChatUser, setArrChatUser] = useState(null)
   useEffect(() => {
-    getEmails(emailType).then(data => { setArrChatUser(data);setIsLoading(false) })
-    
-  }, [emailType])
+    setIsLoading(true);
+    setArrChatUser(null)
 
+    getEmails(emailType).then(data => { setArrChatUser(data); setIsLoading(false) })
+  }, [emailType])
   return (
     <div className='EmailList'>
       <div className="container">
@@ -23,8 +24,7 @@ export const EmailList = () => {
           <InputSearch />
         </div>
         <div className="emailListContainer">
-          {!arrChatUser && !isLoading && <h2> No Chats</h2>}
-          {isLoading && <Loading/>}
+          {!isLoading && arrChatUser?.chats?.length == 0 && < h2 > No Chats</h2>}
           {arrChatUser ? arrChatUser.chats.map((e, i) => {
             const lastmsg = e.chat.msg.find(msg => msg.date === e.chat.lastDate)
             return <EmailLi
@@ -34,11 +34,9 @@ export const EmailList = () => {
               userMsg={lastmsg.content}
               timeMsg={formatTime(lastmsg.date)}
               userImage={e.chat.members[e.chat.members.length - 1].avatar} />
-
-
-          }) : null}
+          }) : <Loading />}
         </div>
       </div>
-    </div>
+    </div >
   )
 }

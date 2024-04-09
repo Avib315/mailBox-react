@@ -25,9 +25,7 @@ export const Cheats = () => {
       <EmailTitle />
       <div className="cheatsAndTextAreaContnainer">
         <div className="cheatsRowContainer">
-          {arrCheats.map((cheat) => (
-            <CheatRow {...cheat} />
-          ))}
+          {arrCheats.map((cheat, i) =><CheatRow key={"ceats" + i} {...cheat} />)}
         </div>
         <div className="textAreaBtnContainer">
         <TextArea/>
