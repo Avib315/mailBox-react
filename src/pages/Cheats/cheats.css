@@ -9,12 +9,11 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--hr);
-    padding: 12px 0px;
+    padding: 16px 0px;
     align-items: center;
 }
 .Cheats .lableContainer {
     width: 110px;
-
 }
 
 .Cheats .headersButtons {

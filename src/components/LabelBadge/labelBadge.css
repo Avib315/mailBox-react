@@ -1,9 +1,11 @@
-
+:root{
+    --heightSizBig:22px ;
+}
 
 .LabelBadge {
     min-width: 35px;
     width: 100%;
-    height: 26px;
+    height: var(--heightSizBig);
     position: relative;
     border-radius: 6px;
     display: flex;
@@ -16,9 +18,9 @@
     content: "";
     display: block;
     position: absolute;
-    right: -7px;
-    width: 21px;
-    height: 21px;
+    right: -4px;
+    width: calc(var(--heightSizBig) - 4px);
+    height: calc(var(--heightSizBig) - 4px);
     border-radius: 6px 4px 6px 6px ;
     background-color: inherit;
     transform: rotate(45deg);

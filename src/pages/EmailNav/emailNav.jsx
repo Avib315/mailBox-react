@@ -46,15 +46,6 @@ export const EmailNav = () => {
             <div className='lableSizeHolder'>
             <LabelBadge bgColor='#b2e9ff' />
             </div>
-            <div className='lableSizeHolder'>
-            <LabelBadge bgColor='#b2e9ff' />
-            </div>
-            <div className='lableSizeHolder'>
-            <LabelBadge bgColor='#b2e9ff' />
-            </div>
-            <div className='lableSizeHolder'>
-            <LabelBadge bgColor='#b2e9ff' />
-            </div>
 
           </div>
         </div>
