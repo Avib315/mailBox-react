@@ -12,7 +12,7 @@ export const EmailList = () => {
   const { userId } = useContext(UserContexts)
   const { emailType } = useParams()
   const axiosPostQuery = { method: "POST", deafultValue: [], url: "userchats/getchats", body: { flags: [flags[emailType]] }, dependency: [emailType] }
-  const { loading, data, setData } = useAxiosReq(axiosPostQuery)
+  const { loading, data, setData , setLoading } = useAxiosReq(axiosPostQuery)
   let searchTimeOut;
   const searchByInput = (e) => {
     clearTimeout(searchTimeOut)
@@ -42,8 +42,8 @@ export const EmailList = () => {
               isRead={e.isRead}
               members={e.chat.members.filter(u => u._id !== userId)}
               userName={e.chat.members[e.chat.members.length - 1].fullName}
-              userMsg={lastmsg.content}
-              timeMsg={formatTime(lastmsg.date)}
+              userMsg={lastmsg?.content}
+              timeMsg={formatTime(lastmsg?.date)}
               userImage={e.chat.members[e.chat.members.langht - 1]} />
           })}
           {loading && <Loading />}

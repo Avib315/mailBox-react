@@ -19,7 +19,7 @@ const useAxiosReq = ({ deafultValue, method, url, body, dependency = [] }) => {
         }
     }
     useEffect(() => { fatchData() }, dependency)
-    return { data, loading, error, setData }
+    return { data, loading, error, setData , setLoading}
 }
 const axiosReq = async ({ method = "POST", body, url }) => {
     try {

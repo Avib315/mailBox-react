@@ -13,17 +13,18 @@
     &:nth-child(1) {
       font-size: 20px;
     }
-  
-    &:active {
-      animation: shaining 1s linear 1;
+
+     &.loadingBtn{
+      opacity: 0.3;
+      animation: shaining 2s linear infinite;
     }
   }
   
   @keyframes shaining {
-    0%, 50% {
-      opacity: 0.5;
+    0%, 100% , 50% {
+      opacity: 0.3;
     }
-    100%, 75%, 25% {
+     75%, 25% {
       opacity: 1;
     }
   }

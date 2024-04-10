@@ -10,19 +10,34 @@ import { FiPrinter } from "react-icons/fi";
 import { HiDotsVertical } from "react-icons/hi";
 import { SendBtn } from '../../components/SendBtn/sendBtn';
 import { useParams } from 'react-router-dom';
-import { useAxiosReq } from '../../functions/webApi';
+import { useAxiosReq, axiosReq } from '../../functions/webApi';
 import { UserContexts } from '../../dataContext/UserContext';
+import { Loading } from '../../components/Loading/loading';
 export const Cheats = () => {
   const { emailId } = useParams()
-  const { data, error, loading, setData } = useAxiosReq({ deafultValue: {}, url: "userchats/getchatsbyid", body: { chatId: emailId }, dependency: [emailId] })
+  const { data, setLoading, loading, setData } = useAxiosReq({ deafultValue: {}, url: "userchats/getchatsbyid", body: { chatId: emailId }, dependency: [emailId] })
   const { userId } = useContext(UserContexts)
   const [newMsg, setNewMsg] = useState("")
-  const sendMsgHendler = () => {
-    console.log(newMsg);
-    setData({ ...data, msg: data.msg.push({ from: userId, content: newMsg, data: new Date() }) })
+  const sendMsgHendler = async () => {
+    setLoading(true)
+    const newDataSend = {
+      id: data._id,
+      msg: {
+        from: userId,
+        content: newMsg,
+      }
+    }
+    const res = await axiosReq({ method: "PUT", body: newDataSend, url: "chats/sendmessag" })
+    console.log(res);
+    setData((prev) => {
+      return { ...prev, msg: [...prev.msg, res] };
+    });
+    setNewMsg("");
+    setLoading(false)
   }
   return (
-    <div className='Cheats'>
+     <div className='Cheats'>
+     {!loading ? <>
       <div className="headerContainer">
         <div className="lableContainer">
           <LabelBadge bgColor="#f2dea8" />
@@ -40,10 +55,12 @@ export const Cheats = () => {
           {data?.msg?.map((msg, i) => <CheatRow key={"ceats" + i} isMe={userId == msg.from._id}{...msg} />)}
         </div>
         <div className="textAreaBtnContainer">
-          <TextArea onChange={e => { setNewMsg(e.target.value); }} />
-          <SendBtn onClick={sendMsgHendler} />
+          <TextArea value={newMsg}  onChange={e => { setNewMsg(e.target.value); }} />
+          <SendBtn onClick={sendMsgHendler} loading={loading} />
         </div>
       </div>
-    </div>
+      </>: <Loading/>}
+    </div> 
+
   )
 }
