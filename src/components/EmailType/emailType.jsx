@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import "./emailType.css"
+import React from 'react'
+import "./emailType.scss"
 import {  NavLink } from 'react-router-dom'
 import playOnClickEffect from '../../functions/soundClickEffect'
 export const EmailType = ({name ="draft" , IconType ,to=""}) => {

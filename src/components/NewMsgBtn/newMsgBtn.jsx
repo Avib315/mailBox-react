@@ -1,5 +1,5 @@
 import React from 'react'
-import "./newMsgBtn.css"
+import "./newMsgBtn.scss"
 import { IoMdMail } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 import playOnClickEffect from '../../functions/soundClickEffect';

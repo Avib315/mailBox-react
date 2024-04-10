@@ -1,5 +1,5 @@
 import React from 'react'
-import "./formSignContainer.css"
+import "./formSignContainer.scss"
 export const FormSignContainer = ({ children, title }) => {
     return (
         <div className='FormSignContainer'>

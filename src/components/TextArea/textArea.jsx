@@ -1,5 +1,5 @@
 import React from 'react'
-import "./textArea.css"
+import "./textArea.scss"
 export const TextArea = () => {
   return (
     <div className='TextArea'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import "./inputUser.css"
+import "./inputUser.scss"
 export const InputUser = ({labelName = "", type = "text" , ...prop}) => {
     return (
         <label className='InputUser'>

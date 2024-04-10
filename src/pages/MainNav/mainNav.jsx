@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import "./mainNav.css"
+import React from 'react'
+import "./mainNav.scss"
 import { mainNavArr } from "../../dataContext/userNav";
 import { NavLink } from 'react-router-dom';
 import playOnClickEffect from '../../functions/soundClickEffect';

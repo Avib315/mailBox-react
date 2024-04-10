@@ -1,5 +1,5 @@
 import React from 'react'
-import "./inputSearch.css"
+import "./inputSearch.scss"
 import { IoSearch } from "react-icons/io5";
 export const InputSearch = (props) => {
   return (

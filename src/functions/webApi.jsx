@@ -19,9 +19,9 @@ const useAxiosReq = ({ deafultValue, method, url, body, dependency = [] }) => {
         }
     }
     useEffect(() => { fatchData() }, dependency)
-    return { data, loading, error , setData }
+    return { data, loading, error, setData }
 }
-const axiosReq = async ({method = "POST", body, url}) => {
+const axiosReq = async ({ method = "POST", body, url }) => {
     try {
 
         const { data: result } = await axios({
@@ -34,7 +34,7 @@ const axiosReq = async ({method = "POST", body, url}) => {
     }
     catch (error) {
         console.error("my Axios Error: \n", error)
-        throw  error.message;
+        throw error.message;
     }
 
 }
@@ -54,4 +54,4 @@ const flags = {
 //     const data = await axios.post(URL + "/userchats/getchats", { flags })
 //     return data.data
 // }
-export {  flags, useAxiosReq , axiosReq}
+export { flags, useAxiosReq, axiosReq }

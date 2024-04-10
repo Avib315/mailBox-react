@@ -1,8 +1,7 @@
 import React, { useContext } from 'react'
-import "./cheats.css"
+import "./cheats.scss"
 import { LabelBadge } from '../../components/LabelBadge/labelBadge'
 import { EmailTitle } from '../../components/EmailTitle/emailTitle';
-import { arrCheats } from './fakeChatsArr';
 import { CheatRow } from '../../components/CheatRow/cheatRow';
 import { TextArea } from '../../components/TextArea/textArea';
 import { FaStar } from "react-icons/fa";
@@ -16,7 +15,7 @@ import { UserContexts } from '../../dataContext/UserContext';
 export const Cheats = () => {
   const { emailId } = useParams()
   const { data, error, loading } = useAxiosReq({ deafultValue: {}, url: "userchats/getchatsbyid", body: { chatId: emailId }, dependency: [emailId] })
-  const {userId} = useContext(UserContexts)
+  const { userId } = useContext(UserContexts)
   return (
     <div className='Cheats'>
       <div className="headerContainer">

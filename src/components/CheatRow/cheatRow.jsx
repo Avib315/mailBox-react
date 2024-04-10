@@ -1,5 +1,5 @@
 import React from 'react'
-import "./cheatRow.css"
+import "./cheatRow.scss"
 import { TiArrowBack } from "react-icons/ti";
 import { useState } from 'react';
 export const CheatRow = ({ isMe, senderName, from = {}, date, msgId, content }) => {

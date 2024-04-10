@@ -1,5 +1,5 @@
 import React from 'react'
-import "./labelBadge.css"
+import "./labelBadge.scss"
 export const LabelBadge = ({ title = "", bgColor = "#FD5E5E" }) => {
   return (
     <>

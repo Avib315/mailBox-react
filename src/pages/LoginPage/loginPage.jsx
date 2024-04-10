@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./loginPage.css"
+import "./loginPage.scss"
 import { FormSignContainer } from '../../components/FormSignContainer/formSignContainer'
 import { InputUser } from '../../components/InputUser/inputUser'
 import { InputSubmit } from '../../components/InputSubmit/inputSubmit'

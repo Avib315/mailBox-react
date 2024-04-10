@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./registerPage.css"
+import "./registerPage.scss"
 import { FormSignContainer } from '../../components/FormSignContainer/formSignContainer'
 import { InputUser } from '../../components/InputUser/inputUser'
 import { InputSubmit } from '../../components/InputSubmit/inputSubmit'
@@ -8,7 +8,6 @@ import { axiosReq } from '../../functions/webApi'
 export const RegisterPage = () => {
   const [userInput, setUserInput] = useState({
     firstName: "",
-    lastName: "",
     lastName: "",
     password: "",
     email: "",

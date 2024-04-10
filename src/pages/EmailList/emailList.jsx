@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import "./emailList.css"
+import React from 'react'
+import "./emailList.scss"
 import { InputSearch } from '../../components/InputSearch/inputSearch'
 import { EmailLi } from '../../components/EmailLi/emailLi'
 import { Loading } from '../../components/Loading/loading';
@@ -9,13 +9,14 @@ import { formatTime } from "../../functions/timeFormat"
 import { useContext } from 'react';
 import { UserContexts } from '../../dataContext/UserContext';
 export const EmailList = () => {
-  const {userId} = useContext(UserContexts)
+  const { userId } = useContext(UserContexts)
   const { emailType } = useParams()
   const axiosPostQuery = { method: "POST", deafultValue: [], url: "userchats/getchats", body: { flags: [flags[emailType]] }, dependency: [emailType] }
   const { loading, data, setData } = useAxiosReq(axiosPostQuery)
+  let searchTimeOut;
   const searchByInput = (e) => {
-    return
-    setTimeout(async () => {
+    clearTimeout(searchTimeOut)
+    searchTimeOut = setTimeout(async () => {
       try {
         const filterData = await axiosReq({ ...axiosPostQuery, body: { flags: [flags[emailType]], input: e.target.value } })
         setData(filterData);

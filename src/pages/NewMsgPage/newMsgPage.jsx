@@ -1,5 +1,5 @@
 import React from 'react'
-import "./newMsgPage.css"
+import "./newMsgPage.scss"
 import { TextArea } from '../../components/TextArea/textArea'
 import { SendBtn } from '../../components/SendBtn/sendBtn'
 export const NewMsgPage = () => {

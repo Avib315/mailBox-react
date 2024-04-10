@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import "./emailNav.css"
+import "./emailNav.scss"
 import { navArr } from '../../dataContext/chatsNav'
 import { EmailType } from '../../components/EmailType/emailType'
 import { NavLink } from 'react-router-dom'
