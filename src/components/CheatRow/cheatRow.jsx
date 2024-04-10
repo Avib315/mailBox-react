@@ -2,7 +2,7 @@ import React from 'react'
 import "./cheatRow.scss"
 import { TiArrowBack } from "react-icons/ti";
 import { useState } from 'react';
-export const CheatRow = ({ isMe, senderName, from = {}, date, msgId, content }) => {
+export const CheatRow = ({ isMe, from = {}, date, msgId, content }) => {
   const [msgIdSelected, setIdMsgSelected] = useState(false)
   return (
     <div className={`CheatRow ${msgIdSelected ? "selectedMsg" : "noneSelected"}`} onClick={() => setIdMsgSelected(!msgIdSelected)}>

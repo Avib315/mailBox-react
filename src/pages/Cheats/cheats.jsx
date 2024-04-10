@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./cheats.scss"
 import { LabelBadge } from '../../components/LabelBadge/labelBadge'
 import { EmailTitle } from '../../components/EmailTitle/emailTitle';
@@ -14,8 +14,13 @@ import { useAxiosReq } from '../../functions/webApi';
 import { UserContexts } from '../../dataContext/UserContext';
 export const Cheats = () => {
   const { emailId } = useParams()
-  const { data, error, loading } = useAxiosReq({ deafultValue: {}, url: "userchats/getchatsbyid", body: { chatId: emailId }, dependency: [emailId] })
+  const { data, error, loading, setData } = useAxiosReq({ deafultValue: {}, url: "userchats/getchatsbyid", body: { chatId: emailId }, dependency: [emailId] })
   const { userId } = useContext(UserContexts)
+  const [newMsg, setNewMsg] = useState("")
+  const sendMsgHendler = () => {
+    console.log(newMsg);
+    setData({ ...data, msg: data.msg.push({ from: userId, content: newMsg, data: new Date() }) })
+  }
   return (
     <div className='Cheats'>
       <div className="headerContainer">
@@ -35,8 +40,8 @@ export const Cheats = () => {
           {data?.msg?.map((msg, i) => <CheatRow key={"ceats" + i} isMe={userId == msg.from._id}{...msg} />)}
         </div>
         <div className="textAreaBtnContainer">
-          <TextArea />
-          <SendBtn />
+          <TextArea onChange={e => { setNewMsg(e.target.value); }} />
+          <SendBtn onClick={sendMsgHendler} />
         </div>
       </div>
     </div>
