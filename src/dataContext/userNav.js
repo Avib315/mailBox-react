@@ -5,7 +5,7 @@ import { FiBarChart2 } from "react-icons/fi";
 import { MdGroup } from "react-icons/md";
 import { IoVideocam } from "react-icons/io5";
 import { FaRegEye } from "react-icons/fa";
-export const userNavArr = [
+export const mainNavArr = [
     {
         to:"compas",
         icon: IoMdSpeedometer

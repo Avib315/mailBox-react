@@ -2,19 +2,19 @@ import React from 'react'
 import "./cheatRow.css"
 import { TiArrowBack } from "react-icons/ti";
 import { useState } from 'react';
-export const CheatRow = ({ isMe, senderName, img, date, msg, msgId }) => {
+export const CheatRow = ({ isMe, senderName, from = {}, date, msgId, content }) => {
   const [msgIdSelected, setIdMsgSelected] = useState(false)
   return (
     <div className={`CheatRow ${msgIdSelected ? "selectedMsg" : "noneSelected"}`} onClick={() => setIdMsgSelected(!msgIdSelected)}>
       <div className='rowContainer'>
         <div className="imgAndNameContainer">
-        {isMe ? <TiArrowBack className='iconYou' /> : <img src={img} className='userImg' />}
-        <span className='senderName'>{senderName}</span>
+          {isMe ? <TiArrowBack className='iconYou' /> : <img src={from.avatar} className='userImg' />}
+          <span className='senderName'>{isMe ? "You" : from.fullName}</span>
         </div>
-        {!msgIdSelected && <p className='msg'>{msg}</p>}
+        {!msgIdSelected && <p className='msg'>{content}</p>}
         <span className='date'>{date}</span>
       </div>
-        {msgIdSelected && <p className='bodyMsg'>{msg}</p>}
+      {msgIdSelected && <p className='bodyMsg'>{content}</p>}
     </div>
   )
 }

@@ -5,29 +5,29 @@ import { FaStar } from "react-icons/fa";
 import { IoTrashBin } from "react-icons/io5";
 export const navArr = [
     {
-        name:"inbox",
-        to:"inbox",
-        icon:MdMoveToInbox
+        name: "inbox",
+        to: "inbox",
+        icon: MdMoveToInbox
     },
     {
-        name:"Send Emails",
-        to:"sent",
-        icon:IoIosSend
+        name: "Send Emails",
+        to: "sent",
+        icon: IoIosSend
     },
     {
-        name:"Favorite",
-        to:"favorite",
-        icon:FaStar
+        name: "Favorite",
+        to: "favorite",
+        icon: FaStar
     },
     {
-        name:"Draft",
-        to:"draft",
+        name: "Draft",
+        to: "draft",
         icon: RiPencilFill
     },
     {
-        name:"Deleted",
-        to:"deleted",
-        icon:IoTrashBin
+        name: "Deleted",
+        to: "deleted",
+        icon: IoTrashBin
     },
 
 ]

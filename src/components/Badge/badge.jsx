@@ -1,7 +1,8 @@
 import React from 'react'
 import "./badge.css"
-export const Badge = ({children}) => {
+import { IoMdMail } from 'react-icons/io'
+export const Badge = () => {
   return (
-    <div className='Badge'>{children}</div>
+    <div className='Badge'><IoMdMail/></div>
   )
 }

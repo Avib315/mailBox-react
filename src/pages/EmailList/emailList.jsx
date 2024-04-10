@@ -6,7 +6,10 @@ import { Loading } from '../../components/Loading/loading';
 import { useParams } from 'react-router-dom';
 import { flags, useAxiosReq, axiosReq } from '../../functions/webApi';
 import { formatTime } from "../../functions/timeFormat"
+import { useContext } from 'react';
+import { UserContexts } from '../../dataContext/UserContext';
 export const EmailList = () => {
+  const {userId} = useContext(UserContexts)
   const { emailType } = useParams()
   const axiosPostQuery = { method: "POST", deafultValue: [], url: "userchats/getchats", body: { flags: [flags[emailType]] }, dependency: [emailType] }
   const { loading, data, setData } = useAxiosReq(axiosPostQuery)
@@ -31,12 +34,12 @@ export const EmailList = () => {
         <div className="emailListContainer">
           {(!loading && data?.length == 0) && < h2 > No Chats , You Lonely Fuck</h2>}
           {data.map((e, i) => {
-            console.log(e);
             const lastmsg = e.chat.msg.find(msg => msg.date === e.chat.lastDate)
             return <EmailLi
-              to={e._id}
+              to={e.chat._id}
               key={"emailList-" + i}
-              members={e.chat.members}
+              isRead={e.isRead}
+              members={e.chat.members.filter(u => u._id !== userId)}
               userName={e.chat.members[e.chat.members.length - 1].fullName}
               userMsg={lastmsg.content}
               timeMsg={formatTime(lastmsg.date)}
