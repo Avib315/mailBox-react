@@ -12,7 +12,7 @@ export const EmailList = () => {
   const { userId } = useContext(UserContexts)
   const { emailType } = useParams()
   const axiosPostQuery = { method: "POST", deafultValue: [], url: "userchats/getchats", body: { flags: [flags[emailType]] }, dependency: [emailType] }
-  const { loading, data, setData , setLoading } = useAxiosReq(axiosPostQuery)
+  const { loading, data, setData, setLoading } = useAxiosReq(axiosPostQuery)
   let searchTimeOut;
   const searchByInput = (e) => {
     clearTimeout(searchTimeOut)
@@ -36,10 +36,13 @@ export const EmailList = () => {
           {(!loading && data?.length == 0) && < h2 > No Chats , You Lonely Fuck</h2>}
           {data.map((e, i) => {
             const lastmsg = e.chat.msg.find(msg => msg.date === e.chat.lastDate)
+            console.log(e);
             return <EmailLi
+              chatId={e._id}
               to={e.chat._id}
               key={"emailList-" + i}
               isRead={e.isRead}
+              isFavorite={e.isFavorite}
               members={e.chat.members.filter(u => u._id !== userId)}
               userName={e.chat.members[e.chat.members.length - 1].fullName}
               userMsg={lastmsg?.content}

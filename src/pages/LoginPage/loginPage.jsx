@@ -4,6 +4,7 @@ import { FormSignContainer } from '../../components/FormSignContainer/formSignCo
 import { InputUser } from '../../components/InputUser/inputUser'
 import { InputSubmit } from '../../components/InputSubmit/inputSubmit'
 import { NavLink } from 'react-router-dom'
+import { axiosReq } from '../../functions/webApi'
 export const LoginPage = () => {
   const [userInput, setUserInput] = useState({ email: "", password: "" })
   const setPasswordHendler = (e) => {
@@ -12,8 +13,12 @@ export const LoginPage = () => {
   const setEmaildHendler = (e) => {
     setUserInput({ ...userInput, email: e.target.value })
   }
-  const onSubmitHendler = (e) => {
+  const onSubmitHendler = async (e) => {
     e.preventDefault()
+    userInput.email.trim()
+    userInput.password.trim()
+    const user = await axiosReq({ method: "POST", body: userInput, url: "user/login" })
+    console.log(user);
   }
   return (
     <FormSignContainer title="Welcome To Mail Box">

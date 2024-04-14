@@ -1,9 +1,8 @@
 import React from 'react'
 import "./sendBtn.scss"
 import { IoIosSend } from "react-icons/io";
-export const SendBtn = (props) => {
-    console.log(props.loading)
+export const SendBtn = ({loading, ...props}) => {
     return (
-        <button className={`SendBtn ${props.loading&&"loadingBtn"} `} {...props}>Send <IoIosSend /> </button>
+        <button className={`SendBtn ${loading ? "loadingBtn" : null} `} {...props}>Send <IoIosSend /> </button>
     )
 }

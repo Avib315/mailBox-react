@@ -114,6 +114,9 @@
       align-items: center;
       background-color: inherit;
       color: #a3a3a3;
+      &.active{
+        color:var(--green);
+      }
     }
   }
 }
